@@ -7,7 +7,7 @@ namespace PlexoOpenBetaTest
     {
         static void Main()
         {
-            string baseIP = "26.236.116.66";
+            string baseIP = "26.236.116.66"; // TODO: Make this use the real IP once I get a VPS
 
             using (StreamWriter writer = new StreamWriter("C:\\Windows\\System32\\drivers\\etc\\hosts", true))
             {
