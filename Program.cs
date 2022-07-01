@@ -1,16 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace PlexoOpenBetaTest
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            string baseIP = "26.236.116.66";
 
+            using (StreamWriter writer = new StreamWriter("C:\\Windows\\System32\\drivers\\etc\\hosts", true))
+            {
+                writer.WriteLine("\r\n# Plexo hosts file configuration\r\n");
+
+                writer.WriteLine($"# Main website\r\n{baseIP}  plexxo.xyz\r\n{baseIP}  http://plexxo.xyz\r\n{baseIP}  www.plexxo.xyz\r\n{baseIP}  http://www.plexxo.xyz\r\n{baseIP}  assetgame.plexxo.xyz\r\n{baseIP}  http://assetgame.plexxo.xyz\r\n");
+                writer.WriteLine($"# Setup sub\r\n{baseIP}  setup.plexxo.xyz\r\n{baseIP}  http://setup.plexxo.xyz\r\n");
+                writer.WriteLine($"# API sub\r\n{baseIP}  api.plexxo.xyz\r\n{baseIP}  http://api.plexxo.xyz\r\n");
+                writer.WriteLine($"# ClientSettings sub\r\n{baseIP}  clientsettings.api.plexxo.xyz\r\n{baseIP}  http://clientsettings.api.plexxo.xyz\r\n");
+                writer.WriteLine($"# VersionCompatibility sub\r\n{baseIP}  versioncompatibility.api.plexxo.xyz\r\n{baseIP}  http://versioncompatibility.api.plexxo.xyz\r\n");
+                writer.WriteLine($"# EphemeralCounters sub\r\n{baseIP}  ephemeralcounters.api.plexxo.xyz\r\n{baseIP}  http://ephemeralcounters.api.plexxo.xyz\r\n");
+
+                writer.WriteLine("\r\n# End Plexo hosts file configuration\r\n");
+            }
+
+            Environment.Exit(0);
         }
     }
 }
