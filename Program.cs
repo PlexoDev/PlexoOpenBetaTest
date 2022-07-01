@@ -7,7 +7,7 @@ namespace PlexoOpenBetaTest
     {
         static void Main()
         {
-            string baseIP = "26.236.116.66";
+            string baseIP = "26.236.116.66"; // TODO: Make this use the VPS IP once I get a VPS
 
             using (StreamWriter writer = new StreamWriter("C:\\Windows\\System32\\drivers\\etc\\hosts", true))
             {
@@ -20,7 +20,7 @@ namespace PlexoOpenBetaTest
                 writer.WriteLine($"# VersionCompatibility sub\r\n{baseIP}  versioncompatibility.api.plexxo.xyz\r\n{baseIP}  http://versioncompatibility.api.plexxo.xyz\r\n");
                 writer.WriteLine($"# EphemeralCounters sub\r\n{baseIP}  ephemeralcounters.api.plexxo.xyz\r\n{baseIP}  http://ephemeralcounters.api.plexxo.xyz\r\n");
 
-                writer.WriteLine("\r\n# End Plexo hosts file configuration\r\n");
+                writer.WriteLine("# End Plexo hosts file configuration\r\n");
             }
 
             Environment.Exit(0);
