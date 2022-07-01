@@ -20,7 +20,7 @@ namespace PlexoOpenBetaTest
                 writer.WriteLine($"# VersionCompatibility sub\r\n{baseIP}  versioncompatibility.api.plexxo.xyz\r\n{baseIP}  http://versioncompatibility.api.plexxo.xyz\r\n");
                 writer.WriteLine($"# EphemeralCounters sub\r\n{baseIP}  ephemeralcounters.api.plexxo.xyz\r\n{baseIP}  http://ephemeralcounters.api.plexxo.xyz\r\n");
 
-                writer.WriteLine("# End Plexo hosts file configuration\r\n");
+                writer.WriteLine("\r\n# End Plexo hosts file configuration\r\n");
             }
 
             Environment.Exit(0);
