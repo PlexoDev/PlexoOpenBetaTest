@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PlexoOpenBetaTest
 {
@@ -8,8 +9,9 @@ namespace PlexoOpenBetaTest
         static void Main()
         {
             string baseIP = "26.236.116.66"; // TODO: Make this use the VPS IP once I get a VPS
+            string rootPath = Path.GetPathRoot(Environment.SystemDirectory);
 
-            using (StreamWriter writer = new StreamWriter("C:\\Windows\\System32\\drivers\\etc\\hosts", true))
+            using (StreamWriter writer = new StreamWriter(rootPath + "Windows\\System32\\drivers\\etc\\hosts", true))
             {
                 writer.WriteLine("\r\n# Plexo hosts file configuration\r\n");
 
@@ -24,6 +26,8 @@ namespace PlexoOpenBetaTest
 
                 writer.Close();
                 writer.Dispose();
+
+                MessageBox.Show("Hosts file configuration complete!", "Complete");
             }
 
             Environment.Exit(0);
